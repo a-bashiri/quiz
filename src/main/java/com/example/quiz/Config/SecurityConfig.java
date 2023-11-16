@@ -32,7 +32,7 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception{
-        String[] adminOnly = {"/api/restaurant/create","/api/restaurant/update","/api/user/delete"};
+        String[] adminOnly = {"/api/restaurant/create","/api/restaurant/update","/api/user/delete", "/api/user/all"};
         String[] userOnly = {"/api/order/update","/api/order/by-restaurant-id/**"};
         String[] customerOnly = {"/api/order/create","/api/order/customer"};
 
