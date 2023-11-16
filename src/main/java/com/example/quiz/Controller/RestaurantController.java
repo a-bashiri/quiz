@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("api/restaurant")
@@ -27,5 +28,9 @@ public class RestaurantController {
     @PutMapping("/update")
     public Restaurant updateRestaurant(@RequestBody Restaurant restaurant){
         return restaurantService.updateRestaurant(restaurant);
+    }
+    @GetMapping("/active")
+    public int activeRestaurants(){
+        return restaurantService.getNumberOfActiveRestaurants();
     }
 }

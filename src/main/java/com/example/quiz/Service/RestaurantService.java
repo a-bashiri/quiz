@@ -26,5 +26,7 @@ public class RestaurantService {
         return restaurantRepo.save(restaurant);
     }
 
-
+    public int getNumberOfActiveRestaurants(){
+        return restaurantRepo.findAllByStatus("Active").size();
+    }
 }
